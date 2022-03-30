@@ -6,18 +6,16 @@ const axios = require('axios').default;
 /* 
 Looping Exercise
 
-OBJECTIVES:
-1) Replace the <option> tags for the dropdown with your own list.
+//REPLACED THE OPTIONS IN THE DROPDOWN LIST WITH NAMES FROM THE JSON array
+//THE IDS ARE ASSIGNED TO THE VALUES
 
 */
 
 function List() {
   const [users, setUsers] = useState([]);
-  console.log(
-    users.map(function (user) {
-      return user.id;
-    })
-  );
+  users.map(function (user) {
+    return user.id;
+  });
 
   //Get using AXIOS
   useEffect(async () => {
@@ -26,29 +24,26 @@ function List() {
     setUsers(result.data);
   }, []);
 
-  const userList = users.map( user => user.name)
-  var selectUser = document.getElementById('select-user')
-  console.log(users);
+  const userList = users.map((user) => user.name);
 
-  for (var i = 0; i < users.length; i++){
-    var name = users[i].name
-    var id = users[i].id
-    var el = document.createElement("option")
-    el.textContent = name
-    el.value = id
-    selectUser.appendChild(el)
-
+  var selectUser = document.getElementById('select-user');
+  //console.log(users);
+  //referenced for help with adding to drop dropdown
+  //https://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
+  for (var i = 0; i < users.length; i++) {
+    var name = users[i].name;
+    var id = users[i].id;
+    var el = document.createElement('option');
+    el.textContent = name;
+    el.value = id;
+    selectUser.appendChild(el);
   }
 
   return (
     <div className="container">
       <div className="row">
         <h3>User Dropdown</h3>
-        <select className="form-select" id="select-user" >
-          <option value="1">Sam Smith</option>
-          <option value="2">Fawkes Phoenix</option>
-          <option value="3">Jack Lohmar</option>
-        </select>
+        <select className="form-select" id="select-user"></select>
       </div>
     </div>
   );
