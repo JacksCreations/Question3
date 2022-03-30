@@ -43,10 +43,10 @@ function List() {
   }
 
   return (
-    <div className="container">
-      <div className="row">
+    <div>
+      <div>
         <h3>User Dropdown</h3>
-        <select className="form-select" id="select-user"></select>
+        <select id="select-user"></select>
       </div>
     </div>
   );
