@@ -9,6 +9,7 @@ Looping Exercise
 //REPLACED THE OPTIONS IN THE DROPDOWN LIST WITH NAMES FROM THE JSON array
 //THE IDS ARE ASSIGNED TO THE VALUES
 
+//BOOTSTRAP IMPLEMENTED IN Q4
 */
 
 function List() {
@@ -27,10 +28,8 @@ function List() {
     })();
   }, []);
 
-  const userList = users.map((user) => user.name);
-
   var selectUser = document.getElementById('select-user');
-  //console.log(users);
+
   //referenced for help with adding to drop dropdown
   //https://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
   for (var i = 0; i < users.length; i++) {
@@ -41,7 +40,7 @@ function List() {
     el.value = id;
     selectUser.appendChild(el);
   }
-
+  //DROPDOWN POPULATED WITH JSON ARRAY DATA
   return (
     <div>
       <div>
