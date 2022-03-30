@@ -17,6 +17,7 @@ function List() {
     return user.id;
   });
 
+  //Pulls the data from typicode
   useEffect(() => {
     (async () => {
       const result = await axios.get(
