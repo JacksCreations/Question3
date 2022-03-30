@@ -17,11 +17,13 @@ function List() {
     return user.id;
   });
 
-  //Get using AXIOS
-  useEffect(async () => {
-    const result = await axios('https://jsonplaceholder.typicode.com/users');
-
-    setUsers(result.data);
+  useEffect(() => {
+    (async () => {
+      const result = await axios.get(
+        'https://jsonplaceholder.typicode.com/users'
+      );
+      setUsers(result.data);
+    })();
   }, []);
 
   const userList = users.map((user) => user.name);
