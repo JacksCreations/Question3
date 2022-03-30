@@ -26,13 +26,25 @@ function List() {
     setUsers(result.data);
   }, []);
 
+  const userList = users.map( user => user.name)
+  var selectUser = document.getElementById('select-user')
   console.log(users);
+
+  for (var i = 0; i < users.length; i++){
+    var name = users[i].name
+    var id = users[i].id
+    var el = document.createElement("option")
+    el.textContent = name
+    el.value = id
+    selectUser.appendChild(el)
+
+  }
 
   return (
     <div className="container">
       <div className="row">
         <h3>User Dropdown</h3>
-        <select className="form-select" mb-3 option={users}>
+        <select className="form-select" id="select-user" >
           <option value="1">Sam Smith</option>
           <option value="2">Fawkes Phoenix</option>
           <option value="3">Jack Lohmar</option>
