@@ -40,6 +40,7 @@ function List() {
     el.value = id;
     selectUser.appendChild(el);
   }
+
   //DROPDOWN POPULATED WITH JSON ARRAY DATA
   return (
     <div>
