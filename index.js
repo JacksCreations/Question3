@@ -46,7 +46,9 @@ function List() {
     <div>
       <div>
         <h3>User Dropdown</h3>
-        <select id="select-user"></select>
+        <script>
+          <select id="select-user"></select>
+        </script>
       </div>
     </div>
   );
